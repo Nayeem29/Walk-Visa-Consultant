@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaFacebook } from "react-icons/fa";
+import { FaGooglePlus } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className='bg-black text-white mt-32'>
       <div className='content-center md:px-10 py-12'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mx-24'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mx-20'>
           <div className='help'>
             <p className='text-3xl font-semibold'>Help</p>
             <Link to='/' className='block'>About</Link>
@@ -23,6 +27,16 @@ const Footer = () => {
             <p className='text-3xl font-semibold'>Community</p>
             <Link to='/' className='block'>Facebook</Link>
             <Link to='/' className='block'>LinkedIn</Link>
+            <Link to='/' className='block'>Github</Link>
+
+          </div>
+          <div className='Icons text-3xl font-semibold flex flex-wrap items-center justify-between'>
+            <FaFacebook />
+            <FaGooglePlus />
+            <FaGithubSquare />
+            <FaInstagram />
+            {/* <Link to='/' className='block'>Facebook</Link>
+            <Link to='/' className='block'>LinkedIn</Link> */}
           </div>
         </div>
         <div className="flex justify-center">
