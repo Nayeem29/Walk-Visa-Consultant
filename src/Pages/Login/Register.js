@@ -1,14 +1,16 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Spinner from './Spinner/Spinner';
+import SocialSign from './SocialSign/SocialSign';
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
   const emailRef = useRef('');
   const passwordRef = useRef('');
   const confirmPasswordRef = useRef('');
+  const navigate = useNavigate();
   let errorElem;
   const [
     createUserWithEmailAndPassword,
@@ -30,9 +32,10 @@ const Register = () => {
   }
   if (user) {
     console.log(user.user);
+    navigate('/login');
   }
   if (error) {
-    errorElem = <p className='text-red-900'>{error?.message}</p>
+    errorElem = <p className='text-red-900 text-center'>{error?.message}</p>
   }
   return (
     <div className='mt-32'>
@@ -61,11 +64,12 @@ const Register = () => {
             className='mt-16 mx-auto block border-2 px-20 py-2 rounded-2xl bg-purple-400 font-semibold hover:text-white'
           >Submit</button>
           {errorElem}
+          <SocialSign />
           <p className='mb-16 text-center'>
             <small className='text-sm'>
               Already have an account?
             </small>
-            <Link to='/login' className='text-red-400 pl-2'>Login</Link>
+            <Link to='/login' className='text-purple-600 pl-2 font-medium mt-3'>Login</Link>
           </p>
         </form>
       </section>
