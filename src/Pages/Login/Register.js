@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Spinner from './Spinner/Spinner';
 import SocialSign from './SocialSign/SocialSign';
 
+
 const Register = () => {
   const [agree, setAgree] = useState(false);
   const emailRef = useRef('');
@@ -18,6 +19,8 @@ const Register = () => {
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+
   const handleRegisterForm = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
@@ -54,6 +57,7 @@ const Register = () => {
           <input type="password" placeholder='Confirm Password' size='60' ref={confirmPasswordRef} required
             className='px-3 py-1 border-2 border-slate-300 h-10 outline-none hover:outline-purple-400 hover:border-0 rounded-2xl mb-6' />
           <br />
+
           <input type="checkbox" name="terms" id="terms"
             className='ml-5 my-5'
             onClick={() => { setAgree(!agree) }}

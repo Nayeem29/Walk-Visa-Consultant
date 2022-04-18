@@ -3,7 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Spinner from './Spinner/Spinner';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import SocialSign from './SocialSign/SocialSign';
+import { async } from '@firebase/util';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
   const emailRef = useRef('');
@@ -15,6 +20,8 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   let errorElem;
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
@@ -36,6 +43,16 @@ const Login = () => {
   if (error) {
     errorElem = <p className='text-red-900 text-center'>{error?.message}</p>
   }
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast('Email send for reset password!');
+    } else {
+      toast('Email not found');
+    }
+  }
 
   return (
     <div className='mt-32'>
@@ -48,7 +65,12 @@ const Login = () => {
           <input type="password" placeholder='Password' size='60' ref={passwordRef} required
             className='px-3 py-1 border-2 border-slate-300 h-10 outline-none hover:outline-purple-400 hover:border-0 rounded-2xl mb-6' />
           <br />
-
+          <p className='text-center'
+          > <small className='text-red-900'>Forget Password?</small>
+            <button
+              onClick={handleResetPassword}
+            >Reset</button></p>
+          <ToastContainer />
           <button
             className='mt-8 mx-auto block border-2 px-20 py-2 rounded-2xl bg-purple-400 font-semibold hover:text-white'
           >Submit</button>
