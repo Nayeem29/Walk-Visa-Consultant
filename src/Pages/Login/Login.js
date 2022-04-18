@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Spinner from './Spinner/Spinner';
@@ -16,6 +16,9 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   let errorElem;
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   const handleLoginForm = event => {
     event.preventDefault();
     const email = emailRef.current.value;
@@ -25,7 +28,7 @@ const Login = () => {
 
   if (user) {
     console.log(user)
-    navigate('/');
+    navigate(from, { replace: true });
   }
   if (loading) {
     return <Spinner />
