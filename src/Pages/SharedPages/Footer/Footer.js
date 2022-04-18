@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='bg-black text-white mt-32'>
+    <div className='bg-black text-white mt-36'>
       <div className='content-center md:px-10 py-12'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mx-20'>
           <div className='help'>
@@ -39,7 +39,7 @@ const Footer = () => {
             <Link to='/' className='block'>LinkedIn</Link> */}
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-8">
           <div className="text-center">
             <div>Copyright &copy; {new Date().getFullYear()}</div>
           </div>

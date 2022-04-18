@@ -13,14 +13,16 @@ const Home = () => {
     <ProvidedServiceContext.Provider value={services}>
       <div>
         <section className='md:flex justify-between items-center bg-gray-400'>
-          <div className='mx-auto text-center'>
+          <div className='mx-auto text-center sm:mb-5'>
             <h1 className='text-6xl font-bold text-white'>Get Private Colsultancy <br />
               Bright Your Future</h1>
-            <p className='mx-36 text-base font-medium my-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, suscipit quia voluptatum dignissimos assumenda animi reiciendis ullam quae molestias iure.</p>
+            <p className='mx-36 text-base font-medium my-5'>
+              In person consultancy for any group of people. The expertise has ten years of experience in consultancy profession and have strong linked with foreign countries' lawyers. I can get your destined visa in six to twelve months.
+            </p>
             <button className='mt-16 border-2 px-20 py-2 rounded-2xl bg-purple-400 font-semibold hover:text-white hover:outline hover:border-0 outline-purple-700'
             >Learn More</button>
           </div>
-          <img className='w-1/3 h-1/3 mx-auto rounded-sm' src={coverImg} alt="" />
+          <img className='w-full md:w-1/3 h-1/3 mx-auto rounded-sm' src={coverImg} alt="" />
         </section>
         <main className='mx-24'>
           <h2 className='text-center font-bold text-5xl text-purple-400 mt-12'>My Expertise Fields</h2>
