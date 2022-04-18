@@ -17,7 +17,7 @@ const Register = () => {
     user,
     loading,
     error,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const handleRegisterForm = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
