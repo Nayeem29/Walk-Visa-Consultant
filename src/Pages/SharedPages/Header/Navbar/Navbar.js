@@ -35,11 +35,11 @@ const Navbar = () => {
 
   return (
     <nav className='md:flex items-center md:justify-end py-4 md:px-10 px-7'>
-      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute transition-all duration-500 ease-in ${open ? 'top-0 right-6' : 'top-[-490px] right-0'}`}>
+      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 right-0' : 'top-[-490px]'}`}>
         {
           routes.map(route =>
-            <li>
-              <NavLink className='mr-12' style={navLinkStyles} key={route.id} to={route.link}>{route.name}</NavLink>
+            <li className='mr-8'>
+              <NavLink style={navLinkStyles} key={route.id} to={route.link}>{route.name}</NavLink>
             </li>
           )
         }
