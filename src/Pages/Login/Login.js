@@ -72,7 +72,7 @@ const Login = () => {
           <ToastContainer />
           <button
             className='mt-8 mx-auto block border-2 px-20 py-2 rounded-2xl bg-purple-400 font-semibold hover:text-white'
-          >Submit</button>
+          >Login</button>
           {errorElem}
           <SocialSign />
           <p className='mb-16 text-center'>

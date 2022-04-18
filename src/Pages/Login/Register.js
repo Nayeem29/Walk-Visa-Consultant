@@ -66,7 +66,7 @@ const Register = () => {
           <button
             disabled={!agree}
             className='mt-16 mx-auto block border-2 px-20 py-2 rounded-2xl bg-purple-400 font-semibold hover:text-white'
-          >Submit</button>
+          >Register</button>
           {errorElem}
           <SocialSign />
           <p className='mb-16 text-center'>
