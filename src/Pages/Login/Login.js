@@ -5,7 +5,6 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Spinner from './Spinner/Spinner';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import SocialSign from './SocialSign/SocialSign';
-import { async } from '@firebase/util';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,7 +36,7 @@ const Login = () => {
     console.log(user)
     navigate(from, { replace: true });
   }
-  if (loading) {
+  if (loading || sending) {
     return <Spinner />;
   }
   if (error) {
