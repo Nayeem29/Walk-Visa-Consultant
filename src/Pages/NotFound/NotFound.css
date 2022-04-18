@@ -1,0 +1,7 @@
+.notfound {
+  background: url('../../Assets/not\ found.avif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -moz-background-size: cover;
+  -moz-background-size: cover;
+}

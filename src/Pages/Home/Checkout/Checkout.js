@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import ContactForm from '../ContactForm/ContactForm';
 // import useServiceDetails from '../../CustomHooks';
 import { ProvidedServiceContext } from '../Home';
@@ -13,6 +13,8 @@ const Checkout = () => {
 
   return (
     <div>
+      <h1 className='text-3xl font-semibold text-slate-700 text-center my-8'>Please fill out this form <br />
+        I will get back to you soon</h1>
       <ContactForm />
     </div>
   );

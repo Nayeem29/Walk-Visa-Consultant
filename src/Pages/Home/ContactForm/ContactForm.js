@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
 
-  const notify = () => toast("I'll reach you soon!!");
+  const notify = () => toast("Thank you for booking!!");
 
   return (
     <div>
@@ -44,7 +44,7 @@ const ContactForm = () => {
           
           m-0
           focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none" id="exampleInput124"
-                aria-describedby="emailHelp124" placeholder="Last name" />
+                placeholder="Last name" />
             </div>
           </div>
           <div className="mb-6">
@@ -74,10 +74,26 @@ const ContactForm = () => {
         bg-white bg-clip-padding
         border border-solid border-gray-300
         rounded
-     
+        mb-8
         m-0
         focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none" id="09876"
               placeholder="Contact Number" required />
+          </div>
+          <div className=" mb-6">
+            <input type="text" className=" block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        mb-8
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none" id="09876"
+              placeholder="Address" required />
           </div>
 
           <button type="submit"
